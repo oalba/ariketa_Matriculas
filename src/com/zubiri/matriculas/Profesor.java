@@ -4,8 +4,10 @@ import java.util.*;
 
 public class Profesor extends Persona {
 	
-	String titulacion;
-	String departamento;
+	static String titulacion;
+	static String departamento;
+	
+	public Profesor(){}
 
 	public Profesor(String dni, String nombre, String apellido, String titulacion, String departamento){
 		super(dni, nombre, apellido);
@@ -25,7 +27,7 @@ public class Profesor extends Persona {
 		}
 	}
 	
-	public String getTitulacion() {
+	public static String getTitulacion() {
 		return titulacion;
 	}
 	
@@ -33,7 +35,7 @@ public class Profesor extends Persona {
 		this.titulacion = titulacion;
 	}
 	
-	public String getDepartamento() {
+	public static String getDepartamento() {
 		return departamento;
 	}
 	

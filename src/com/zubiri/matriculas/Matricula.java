@@ -4,8 +4,10 @@ import java.util.*;
 
 public class Matricula extends Asignatura {
 	
-	int añoMatriculacion;
-    double precio;
+	static int añoMatriculacion;
+    static double precio;
+    
+    public Matricula(){}
 
     public Matricula(String nombre, int creditos, Profesor profesor, int añoMatriculacion, double precio){
     	super(nombre, creditos, profesor);
@@ -24,7 +26,7 @@ public class Matricula extends Asignatura {
 		}
     }
 	
-	public int getAñoMatriculacion() {
+	public static int getAñoMatriculacion() {
 		return añoMatriculacion;
 	}
 	
@@ -32,7 +34,7 @@ public class Matricula extends Asignatura {
 		this.añoMatriculacion = añoMatriculacion;
 	}
 	
-	public double getPrecio() {
+	public static double getPrecio() {
 		return precio;
 	}
 
@@ -51,7 +53,7 @@ public class Matricula extends Asignatura {
 		return precioTotal;
 	}
 
-	public void mostrarMatricula(){
+	public void mostrarUltMatricula(){
 		try{
 			super.mostrarAsignatura();
 			System.out.println("Año de matriculación: " + getAñoMatriculacion());

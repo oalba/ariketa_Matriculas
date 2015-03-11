@@ -4,9 +4,11 @@ import java.util.*;
 
 public class Asignatura {
 
-	String nombre;
-	int creditos;
-	Profesor profesor;
+	static String nombre;
+	static int creditos;
+	static Profesor profesor;
+	
+	public Asignatura(){}
 
 	public Asignatura(String nombre, int creditos, Profesor profesor){
 		this.nombre = nombre;
@@ -16,17 +18,18 @@ public class Asignatura {
 	public Asignatura(Scanner sc){
 		try{
 			System.out.println("Nombre de la signatura: ");
-			this.setNombre(sc.next());
+			setNombre(sc.next());
 			System.out.println("Créditos: ");
-			this.setCreditos(sc.nextInt());
+			setCreditos(sc.nextInt());
 			System.out.println("Profesor: ");
-			Profesor profesor = new Profesor(sc);
+			//Profesor profesor = new Profesor(sc);
+			setProfesor(new Profesor(sc));
 		}catch (Exception e) {
 			System.out.println("¡Error al introducir la asignatura!"+e);
 		}
 	}
 	
-	public String getNombre() {
+	public static String getNombre() {
 		return nombre;
 	}
 	
@@ -34,7 +37,7 @@ public class Asignatura {
 		this.nombre = nombre;
 	}
 	
-	public int getCreditos() {
+	public static int getCreditos() {
 		return creditos;
 	}
 	
@@ -42,7 +45,7 @@ public class Asignatura {
 		this.creditos = creditos;
 	}
 	
-	public Profesor getProfesor() {
+	public static Profesor getProfesor() {
 		return profesor;
 	}
 	
@@ -68,7 +71,7 @@ public class Asignatura {
 	 * M�todo que obtiene valores de una asignatura a partir de un String y 
 	 * un caracter separador.
 	 */
-	public void split(String asignaturaStr, char separator) {
+	public static void split(String asignaturaStr, char separator) {
 		try{
 			String separador = (Character.toString(separator));
 			String [] parte = asignaturaStr.split(separador);
@@ -76,14 +79,16 @@ public class Asignatura {
 			System.out.println("Créditos de la asignatura: " + parte[1]);
 			System.out.println("Profesor: " + parte[2]);
 		}catch (Exception e) {
-			System.out.println("¡Error con la obtención de los valores!"+e);
+			System.out.println("static ¡Error con la obtención de los valores!"+e);
 		}
 	}
-	public void mostrarAsignatura(){
+	public static void mostrarAsignatura(){
 		try{
 		System.out.println("Nombre: " + getNombre());
 		System.out.println("Créditos: " + getCreditos());
-		System.out.println("Profesor: " + getProfesor());
+		//System.out.println("Profesor: " + getProfesor());
+		Profesor profesor = new Profesor();
+		profesor.mostrarPersona();
 		}catch (Exception e) {
 			System.out.println("¡Error al mostrar la asignatura!"+e);			
 		}

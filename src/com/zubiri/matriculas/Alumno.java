@@ -11,6 +11,8 @@ public class Alumno extends Persona {
 	
 	//Matriculas realizadas a lo largo de los años en las distintas asignaturas
 	ArrayList<Matricula> matriculas = null;
+	
+	public Alumno(){}
 
 	public Alumno(String dni, String nombre, String apellido, int añoInscripcion, String ciclo, ArrayList<Matricula> matriculas){
 		super(dni, nombre, apellido);
