@@ -5,6 +5,10 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 public class Main {
 
+		public static Asignatura asignatura = null;
+
+		//private static Asignatura asignatura;
+
 		public static void main(String[] args) throws IOException {
 			
 			int seleccion = -1;
@@ -21,8 +25,7 @@ public class Main {
 					   
 					seleccion = sc.nextInt();
 					
-					//Matricula matricula = new Matricula();
-					//Asignatura asignatura = new Asignatura();
+					//Asignatura asignatura = null;
 					
 					switch (seleccion) {
 						case 1: //Matricular
@@ -34,11 +37,11 @@ public class Main {
 							//matricula.mostrarUltMatricula();
 							break;
 						case 3: //Mostrar asignatura
-							Asignatura.mostrarAsignatura();
+							asignatura.mostrarAsignatura();
 							//asignatura.split(asignatura.formatted(),':');
 							break;
 						case 4: //Añadir asignatura
-							new Asignatura(sc);
+							asignatura = new Asignatura(sc);
 							break;
 						case 5: //Salimos
 							break;

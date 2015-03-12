@@ -4,9 +4,9 @@ import java.util.*;
 
 public abstract class Persona {
 	
-	static String dni;
-	static String nombre;
-	static String apellido;
+	String dni;
+	String nombre;
+	String apellido;
 	
 	public Persona(){}
 
@@ -30,7 +30,7 @@ public abstract class Persona {
 		}
 	}
 
-	public static String getDni() {
+	public String getDni() {
 		return dni;
 	}
 	
@@ -38,7 +38,7 @@ public abstract class Persona {
 		this.dni = dni;
 	}
 	
-	public static String getNombre() {
+	public String getNombre() {
 		return nombre;
 	}
 	
@@ -46,7 +46,7 @@ public abstract class Persona {
 		this.nombre = nombre;
 	}
 	
-	public static String getApellido() {
+	public String getApellido() {
 		return apellido;
 	}
 	
@@ -72,7 +72,7 @@ public abstract class Persona {
 	 * M�todo que obtiene valores de una persona a partir de un String y 
 	 * un caracter separador.
 	 */
-	public static void split(String personaStr, char separator) {
+	public void split(String personaStr, char separator) {
 		try{
 			String separador = (Character.toString(separator));
 			String [] parte = personaStr.split(separador);

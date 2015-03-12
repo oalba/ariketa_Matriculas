@@ -4,8 +4,8 @@ import java.util.*;
 
 public class Profesor extends Persona {
 	
-	static String titulacion;
-	static String departamento;
+	String titulacion;
+	String departamento;
 	
 	public Profesor(){}
 
@@ -27,7 +27,7 @@ public class Profesor extends Persona {
 		}
 	}
 	
-	public static String getTitulacion() {
+	public String getTitulacion() {
 		return titulacion;
 	}
 	
@@ -35,7 +35,7 @@ public class Profesor extends Persona {
 		this.titulacion = titulacion;
 	}
 	
-	public static String getDepartamento() {
+	public String getDepartamento() {
 		return departamento;
 	}
 	

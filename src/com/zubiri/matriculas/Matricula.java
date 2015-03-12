@@ -4,8 +4,8 @@ import java.util.*;
 
 public class Matricula extends Asignatura {
 	
-	static int añoMatriculacion;
-    static double precio;
+	int añoMatriculacion;
+    double precio;
     
     public Matricula(){}
 
@@ -26,7 +26,7 @@ public class Matricula extends Asignatura {
 		}
     }
 	
-	public static int getAñoMatriculacion() {
+	public int getAñoMatriculacion() {
 		return añoMatriculacion;
 	}
 	
@@ -34,7 +34,7 @@ public class Matricula extends Asignatura {
 		this.añoMatriculacion = añoMatriculacion;
 	}
 	
-	public static double getPrecio() {
+	public double getPrecio() {
 		return precio;
 	}
 

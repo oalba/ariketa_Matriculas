@@ -4,9 +4,9 @@ import java.util.*;
 
 public class Asignatura {
 
-	static String nombre;
-	static int creditos;
-	static Profesor profesor;
+	String nombre;
+	int creditos;
+	Profesor profesor;
 	
 	public Asignatura(){}
 
@@ -23,13 +23,13 @@ public class Asignatura {
 			setCreditos(sc.nextInt());
 			System.out.println("Profesor: ");
 			//Profesor profesor = new Profesor(sc);
-			setProfesor(new Profesor(sc));
+			setProfesor(profesor = new Profesor(sc));
 		}catch (Exception e) {
 			System.out.println("¡Error al introducir la asignatura!"+e);
 		}
 	}
 	
-	public static String getNombre() {
+	public String getNombre() {
 		return nombre;
 	}
 	
@@ -37,7 +37,7 @@ public class Asignatura {
 		this.nombre = nombre;
 	}
 	
-	public static int getCreditos() {
+	public int getCreditos() {
 		return creditos;
 	}
 	
@@ -45,7 +45,7 @@ public class Asignatura {
 		this.creditos = creditos;
 	}
 	
-	public static Profesor getProfesor() {
+	public Profesor getProfesor() {
 		return profesor;
 	}
 	
@@ -71,7 +71,7 @@ public class Asignatura {
 	 * M�todo que obtiene valores de una asignatura a partir de un String y 
 	 * un caracter separador.
 	 */
-	public static void split(String asignaturaStr, char separator) {
+	public void split(String asignaturaStr, char separator) {
 		try{
 			String separador = (Character.toString(separator));
 			String [] parte = asignaturaStr.split(separador);
@@ -82,12 +82,12 @@ public class Asignatura {
 			System.out.println("static ¡Error con la obtención de los valores!"+e);
 		}
 	}
-	public static void mostrarAsignatura(){
+	public void mostrarAsignatura(){
 		try{
 		System.out.println("Nombre: " + getNombre());
 		System.out.println("Créditos: " + getCreditos());
 		//System.out.println("Profesor: " + getProfesor());
-		Profesor profesor = new Profesor();
+		//Profesor profesor;
 		profesor.mostrarPersona();
 		}catch (Exception e) {
 			System.out.println("¡Error al mostrar la asignatura!"+e);			
